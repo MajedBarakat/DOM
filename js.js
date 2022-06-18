@@ -25,10 +25,14 @@ function remove(event){
     ssss.closest('.div2').remove()
 }
 
-function addToCartClicked(event){
-    var button = event.target
-    var shopItem = button.parentElement.parentElement
-    var title = shopItem.getElementsByClassName('cart')[0].innerText
-    var price = shopItem.getElementsByClassName('cart')[0].innerText
-    var imageSrc = 
+function total(){
+    var prices =  document.getElementsByClassName('bb')
+    var quantities = document.getElementsByClassName('ii1')
+    var sum =0
+ for (let i = 0; i < btns.length; i++){
+    var price = prices[i].innerHTML.replace('DT','')
+    var quantity = quantities[i].value
+    sum +=Number(price) * quantity  
+ }
+ document.getElementById('tt1').innerHTML = String(sum) + "DT"
 }
